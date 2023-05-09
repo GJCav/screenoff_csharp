@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 static extern bool LockWorkStation();
 
 [DllImport("User32.dll")]
-static extern int SendMessage(int hWnd, int hMsg, int wParam, int lParam);
+static extern int PostMessage(int hWnd, int hMsg, int wParam, int lParam);
 
 
 LockWorkStation();
-SendMessage(-1, 0x0112, 0xF170, 2);
+PostMessage(-1, 0x0112, 0xF170, 2);
 
 /**
  * WM_SYSCOMMAND    0x0112
